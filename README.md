@@ -11,6 +11,10 @@ Puedes participar en el proyecto con:
 * Revisar [cambios en el código fuente](https://github.com/encamina/enmarcha-sharepoint/pulls)
 
 ## Ejemplos de uso
+Para aprender a usar ENMARCHA, os hemos creado los siguientes [ejemplos](https://github.com/Encamina/Enmarcha-SharePoint/tree/master/Samples):
+
+* Enmarcha.Samples.Provisioning - Trabajar con datos (listas y bibliotecas de documentos en SharePoint)
+* Enmarcha.Samples.ManageData - Provisionar artefactos de SharePoint
 
 ## Licencia
 [MIT](LICENSE.txt)
