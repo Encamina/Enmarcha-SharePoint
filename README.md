@@ -11,6 +11,10 @@ Puedes participar en el proyecto con:
 * [Enviando bugs y solicitando nuevas funcionalidades](https://github.com/encamina/enmarcha-sharepoint/issues) and help us verify as they are checked in
 * Revisar [cambios en el código fuente](https://github.com/encamina/enmarcha-sharepoint/pulls)
 
+## Requisitos
+* SharePoint Server 2013
+* .NET Framework 4.5
+
 ## Ejemplos de uso
 Para aprender a usar ENMARCHA, os hemos creado los siguientes [ejemplos](https://github.com/Encamina/Enmarcha-SharePoint/tree/master/Samples):
 
