@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Enmarcha.SharePoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=80e8bea2d0412e80, processorArchitecture=AMD64">
+      <HintPath>..\packages\Enmarcha.SharePoint.0.0.0.1\lib\net45\Enmarcha.SharePoint.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Enmarcha.SharePoint.Abstract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=01a22e8e9b6f01f4, processorArchitecture=AMD64">
+      <HintPath>..\packages\Enmarcha.SharePoint.0.0.0.1\lib\net45\Enmarcha.SharePoint.Abstract.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\dll\Microsoft.SharePoint.dll</HintPath>
@@ -53,16 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Enmarcha.SharePoint.Abstract\Enmarcha.SharePoint.Abstract.csproj">
-      <Project>{e85e91b9-ed90-4be2-859c-938639490e67}</Project>
-      <Name>Enmarcha.SharePoint.Abstract</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Enmarcha.SharePoint\Enmarcha.SharePoint.OnPremises.csproj">
-      <Project>{45abbf76-3804-48b3-a69b-a61dae45260d}</Project>
-      <Name>Enmarcha.SharePoint.OnPremises</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
