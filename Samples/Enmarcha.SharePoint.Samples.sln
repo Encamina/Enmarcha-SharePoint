@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enmarcha.Samples.ManageData", "..\Enmarcha.Samples.ManageData\Enmarcha.Samples.ManageData.csproj", "{6505D4E9-E35E-444F-95F7-8EC6646B1C85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enmarcha.Samples.ManageData", "Enmarcha.Samples.ManageData\Enmarcha.Samples.ManageData.csproj", "{6505D4E9-E35E-444F-95F7-8EC6646B1C85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enmarcha.Samples.Provisioning", "..\Enmarcha.Samples.Provisioning\Enmarcha.Samples.Provisioning.csproj", "{8EBC1C9A-0913-404D-B0DD-192488503E02}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enmarcha.Samples.Provisioning", "Enmarcha.Samples.Provisioning\Enmarcha.Samples.Provisioning.csproj", "{8EBC1C9A-0913-404D-B0DD-192488503E02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
