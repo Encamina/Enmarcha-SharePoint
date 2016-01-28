@@ -33,7 +33,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Encmarcha.SharePoint.Onpremises.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Enmarcha.SharePointOnpremises.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -106,7 +106,7 @@
     <Compile Include="Entities\Artefacts\ListSharePoint.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Encmarcha.SharePoint.Onpremises.pfx" />
+    <None Include="Enmarcha.SharePointOnpremises.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
