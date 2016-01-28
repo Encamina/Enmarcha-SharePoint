@@ -99,16 +99,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Enmarcha.SharePoint.Abstract\Enmarcha.SharePoint.Abstract.csproj">
-      <Project>{e85e91b9-ed90-4be2-859c-938639490e67}</Project>
-      <Name>Enmarcha.SharePoint.Abstract</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Entities\Artefacts\ListSharePoint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Enmarcha.SharePointOnpremises.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Enmarcha.SharePoint.Abstract\Enmarcha.SharePoint.Abstract.csproj">
+      <Project>{e85e91b9-ed90-4be2-859c-938639490e67}</Project>
+      <Name>Enmarcha.SharePoint.Abstract</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
