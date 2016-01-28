@@ -10,7 +10,7 @@ namespace Enmarcha.Samples.Provisioning
     {
         static void Main(string[] args)
         {
-            const string urlSharePointOnpremise = "http://win-g63j2a9dmpv:21952/";          
+            const string urlSharePointOnpremise = "[enteryoururlhere]";          
             using (var site = new SPSite(urlSharePointOnpremise))
             {
                 using (var web = site.OpenWeb())
