@@ -1,3 +1,4 @@
+﻿[![NuGet version](https://badge.fury.io/nu/Enmarcha.SharePoint.svg)](https://badge.fury.io/nu/Enmarcha.SharePoint)
 # ENMARCHA SharePoint - Open Source
 
 [ENMARCHA] es el framework de desarrollo que usamos en ENCAMINA para acelerar la construcción de soluciones Microsoft. 
