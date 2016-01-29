@@ -61,6 +61,11 @@ Para saber que tipo de Columnas de SharePoint son necesarios a cada propiedad le
         [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.User, DisplayName = "Boss Primary")]
         public IList<UserSP> Boss { get; set; }
 ```
+Los Atributos que se pueden añadir a cada propiedad estan dentro de la Clase [EnmarchaAttribute.cs]https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Attribute/EnmarchaAttribute.cs)
+AddPrefeix-> Le añada un prefijo cuando crea el campo de forma que se evita que coincida con algun campo ya declarado
+Create -> Indica si esta propiedad hay que crearla o no.
+Type -> Tipo de SharePoint con el que representa esta propiedad
+
 5.-A continuación, inicialicaremos la clase SharePointRepository, los parametros que son necesarios son:
 
 . SPweb
