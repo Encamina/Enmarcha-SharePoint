@@ -1,7 +1,9 @@
 ﻿[![NuGet version](https://badge.fury.io/nu/Enmarcha.SharePoint.svg)](https://badge.fury.io/nu/Enmarcha.SharePoint)
 # ENMARCHA SharePoint - Open Source
 
-[ENMARCHA] es el framework de desarrollo que usamos en ENCAMINA para acelerar la construcción de soluciones Microsoft. 
+ENMARCHA es el framework de desarrollo que usamos en ENCAMINA para acelerar la construcción de soluciones Microsoft. 
+
+![alt text](https://encaminastorage.blob.core.windows.net/images/enmarcha-logo-64.png "Logo Enmarcha")
 
 El repositorio ['ENMARCHA SharePoint'](https://github.com/encamina/enmarcha-sharepoint) es donde desarrollamos la implementación de SharePoint OnPremises, ofreciendo una capa de abstracción a la API de servidor que ofrece Microsoft SharePoint. 
 
@@ -14,6 +16,7 @@ Puedes participar en el proyecto con:
 ## Requisitos
 * SharePoint Server 2013
 * .NET Framework 4.5
+* Visual Studio 2013
 
 ## Ejemplos de uso
 Para aprender a usar ENMARCHA, os hemos creado los siguientes [ejemplos](https://github.com/Encamina/Enmarcha-SharePoint/tree/master/Samples):
