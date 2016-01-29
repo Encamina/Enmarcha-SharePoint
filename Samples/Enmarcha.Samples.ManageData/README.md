@@ -62,8 +62,10 @@ Para saber que tipo de Columnas de SharePoint son necesarios a cada propiedad le
         public IList<UserSP> Boss { get; set; }
 ```
 5.-A continuación, inicialicaremos la clase SharePointRepository, los parametros que son necesarios son:
-*. SPweb
-*. Log (Enmarcha por defecto trae un Log que graba en los [logs de SharePoint](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Logs/LogManager.cs) pero se puede utilizar cualquier Log siemple que se implemente la interfaz [ILog](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint.Abstract/Interfaces/Artefacts/ILog.cs)
+
+. SPweb
+
+. Log (Enmarcha por defecto trae un Log que graba en los [logs de SharePoint](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Logs/LogManager.cs) pero se puede utilizar cualquier Log siemple que se implemente la interfaz [ILog](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint.Abstract/Interfaces/Artefacts/ILog.cs)
 
 ```C#
 var  logger = new LogManager().GetLogger(new System.Diagnostics.StackTrace().GetFrame(0)); ;
