@@ -72,6 +72,39 @@ var repository= new SharePointRepository<Employed>(web,logger,listName,10);
 
 6.- Ahora para insertar un elemento sobre la lista de SharePoint Employed, tendremos en primer lugar crear una elemento basado en la clase Employed y a continuación pasarle ese elemento al metodo "Insert" de nuestro repositorio de SharePoint. de 
 ```C#
+  var employed = new Employed
+                {
+                    Country = "Spain",
+                    DateBorn = new DateTime(1981, 5, 10),
+                    Job = "Sofware Architect",
+                    LastName = "Diaz Cervera",
+                    Name = "Adrian"
+                };
 var  resultInsert= repository.Insert(employed);
 ```
-7.- 
+7.- Para realizar una modificación sobre un elemento hay que pasarle los datos que se quierean modificar y el identificador del elemento que vamos actualizar
+```C#
+  var firstEmployed= new Employed { Job = "Sofware Architect Lead"};
+  var updateOperation= repository.Save(Convert.ToInt32(resultInsert), firstEmployed);
+```
+
+8.- Eliminar un elemento
+```C#
+var resultBool = repository.Delete(resultInsert);
+```
+
+9.- Como hacer Hacer consultas sobre las listas, se pueden hacer de dos formas pasando la Caml Query de forma directa:
+```C#
+ var queryCaml = @"<Where>
+                                      <Eq>
+                                         <FieldRef Name='Name' />
+                                         <Value Type='Text'>Adrian</Value>
+                                      </Eq>
+                                   </Where>";
+ var queryCollection = repository.Query(queryCaml, 1);
+```
+o bien podemos utilizar un [generador de consultas](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Data/Query.cs) que esta dentro de Enmarcha
+```C#
+var query = new Query().Where().Field("Name",string.Empty).Operator(TypeOperators.Eq).Value("Text","Adrian");
+  queryCollection = repository.Query(query, 1);
+```
