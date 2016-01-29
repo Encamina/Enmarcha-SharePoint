@@ -8,7 +8,7 @@ namespace Enmarcha.Samples.SiteProvisioning
     {
         static void Main(string[] args)
         {
-            const string urlSharePointOnpremise = "[enteryoururl]";
+            const string urlSharePointOnpremise = "urlsiteSharePoint";
 
             using (var site = new SPSite(urlSharePointOnpremise))
             {

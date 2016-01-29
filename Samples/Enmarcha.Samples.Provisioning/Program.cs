@@ -1,6 +1,5 @@
 ﻿using Enmarcha.Samples.Provisioning.Model;
 using Enmarcha.SharePoint.Abstract.Enum;
-using Enmarcha.SharePoint.Entities.Artefacts;
 using Enmarcha.SharePoint.Extensors;
 using Microsoft.SharePoint;
 
