@@ -30,13 +30,13 @@ En este escaniro vamos a mostrar como trabajar con una lista utilizando la clase
 
 ### Visual Studio ###
 
-1.- Abrimos la solución Enmarcha.Samples.sln con Visual Studio 2013/ Visual Studio 2015
-2.- Restauramos los paquetes Nuget de la Solución
-3.- Abrimos el fichero Program.cs e introducimos la url de nuestro sitio de SharePoint que esta asignada en la constante urlSharePointOnpremise:
+*1.- Abrimos la solución Enmarcha.Samples.sln con Visual Studio 2013/ Visual Studio 2015
+*2.- Restauramos los paquetes Nuget de la Solución
+*3.- Abrimos el fichero Program.cs e introducimos la url de nuestro sitio de SharePoint que esta asignada en la constante urlSharePointOnpremise:
 ```C#
  const string urlSharePointOnpremise = "urlsiteSharePoint";
 ```
-4.- Para crear la lista utilizaremos el método extensor [CreateList](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Extensors/List.cs)
+*4.- Para crear la lista utilizaremos el método extensor [CreateList](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Extensors/List.cs)
 ```C#
   var createList= web.CreateList(listName, "List of Employed of my Company", TypeList.GenericList, false,
                         typeof (Employed));
@@ -59,3 +59,6 @@ Para saber que tipo de Columnas de SharePoint son necesarios a cada propiedad le
         [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.User, DisplayName = "Boss Primary")]
         public IList<UserSP> Boss { get; set; }
 ```
+*5.-A continuación, inicialicaremos la clase SharePointRepository, los parametros que son necesarios son:
+*. SPweb
+*. Log (Enmarcha por defecto trae un Log que graba en los [logs de SharePoint](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Logs/LogManager.cs) pero se puede utilizar cualquier Log siemple que se implemente la interfaz [ILog](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint.Abstract/Interfaces/Artefacts/ILog.cs)
