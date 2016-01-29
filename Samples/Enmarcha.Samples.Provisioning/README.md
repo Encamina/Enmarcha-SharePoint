@@ -45,24 +45,27 @@ En este escenario vamos a mostrar como trabajar con una lista utilizando la clas
 Esto crea una lista y le añade los campos, cada una de las propiedades que hay en la clase [Employed.cs](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Samples/Enmarcha.Samples.ManageData/Model/Employed.cs). 
 Para saber que tipo de Columnas de SharePoint son necesarios a cada propiedad le asignamos unos Atributos donde se condigura estos valores:
 ```C#
- [Enmarcha(AddPrefeix = false, Create = false, Type = TypeField.Text)]
-        public string ID { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Text, DisplayName = "Fist Name")]
-        public string Name { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Text, DisplayName = "Last Name")]
-        public string LastName { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.DateTime, DisplayName = "Date of Born")]
-        public DateTime DateBorn { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Choice, DisplayName = "Job",Choice= new []{"Developer","Designer"})]
-        public string Job { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Text, DisplayName = "Country")]
-        public string Country { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.User, DisplayName = "Boss Primary")]
-        public IList<UserSP> Boss { get; set; }
+[Enmarcha(AddPrefeix = false, Create = false, Type = TypeField.Text)]
+public string ID { get; set; }
+[Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Text, DisplayName = "Fist Name")]
+public string Name { get; set; }
+[Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Text, DisplayName = "Last Name")]
+public string LastName { get; set; }
+[Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.DateTime, DisplayName = "Date of Born")]
+public DateTime DateBorn { get; set; }
+[Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Choice, DisplayName = "Job",Choice= new []{"Developer","Designer"})]
+public string Job { get; set; }
+[Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Text, DisplayName = "Country")]
+public string Country { get; set; }
+[Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.User, DisplayName = "Boss Primary")]
+public IList<UserSP> Boss { get; set; }
 ```
 Los Atributos que se pueden añadir a cada propiedad estan dentro de la Clase [EnmarchaAttribute.cs]https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Attribute/EnmarchaAttribute.cs)
+
 AddPrefeix-> Le añada un prefijo cuando crea el campo de forma que se evita que coincida con algun campo ya declarado
+
 Create -> Indica si esta propiedad hay que crearla o no.
+
 Type -> Tipo de SharePoint con el que representa esta propiedad
 
 5.-A continuación, crearemos un tipo de contenido, añadiendo las columnas de sitio creadas en el paso anterior
