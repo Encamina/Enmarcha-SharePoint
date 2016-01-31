@@ -1,3 +1,4 @@
+.[![Build Status of Enmarcha on Circle CI](https://img.shields.io/circleci/project/aspnet/aspnet-docker.svg)](https://circleci.com/gh/Encamina/Enmarcha-SharePoint)
 ﻿[![NuGet version](https://badge.fury.io/nu/Enmarcha.SharePoint.svg)](https://badge.fury.io/nu/Enmarcha.SharePoint)
 # ENMARCHA SharePoint - Open Source
 
