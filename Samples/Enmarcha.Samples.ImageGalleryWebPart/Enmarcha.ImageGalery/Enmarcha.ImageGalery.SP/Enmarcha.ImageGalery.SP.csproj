@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BEDC7CC-FEC4-4E0D-B40F-4A76518EDD3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Enmarcha.ImageGalery.SP</RootNamespace>
+    <AssemblyName>Enmarcha.ImageGalery.SP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Enmarcha.SharePoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=80e8bea2d0412e80, processorArchitecture=AMD64">
+      <HintPath>..\packages\Enmarcha.SharePoint.0.0.0.1\lib\net45\Enmarcha.SharePoint.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Enmarcha.SharePoint.Abstract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=01a22e8e9b6f01f4, processorArchitecture=AMD64">
+      <HintPath>..\packages\Enmarcha.SharePoint.0.0.0.1\lib\net45\Enmarcha.SharePoint.Abstract.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\Main\Main.EventReceiver.cs">
+      <DependentUpon>Main.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\Constants.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebPart\ImageGalleryWebPart\ImageGalleryWebPart.cs" />
+    <Compile Include="WebPart\ImageGalleryWebPart\ImageGalleryWebPartUserControl.ascx.cs">
+      <DependentUpon>ImageGalleryWebPartUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebPart\ImageGalleryWebPart\ImageGalleryWebPartUserControl.ascx.designer.cs">
+      <DependentUpon>ImageGalleryWebPartUserControl.ascx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Main\Main.feature">
+      <FeatureId>{749b4c60-c1b5-40d8-ad15-d3c8dfa117af}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Module\StyleLibrary\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{49485d56-e250-41db-aff5-96bca6829661}</SharePointProjectItemId>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Package\Package.package">
+      <PackageId>{dc9f8537-ef9d-4140-b453-11dee54b7e00}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="WebPart\ImageGalleryWebPart\ImageGalleryWebPart.webpart" />
+    <None Include="WebPart\ImageGalleryWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{751dcf38-ca46-42eb-83fd-5d222946d303}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Enmarcha.ImageGalery.Model\Enmarcha.ImageGalery.Model.csproj">
+      <Project>{2e857dfc-765d-46a7-b901-d1c851d83c5f}</Project>
+      <Name>Enmarcha.ImageGalery.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Enmarcha.ImageGalery.Service\Enmarcha.ImageGalery.Service.csproj">
+      <Project>{e7a4be31-3eaa-4c94-bb56-af666356a1c1}</Project>
+      <Name>Enmarcha.ImageGalery.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Features\Main\Main.Template.xml">
+      <DependentUpon>Main.feature</DependentUpon>
+    </Content>
+    <Content Include="Module\StyleLibrary\css\liquidcarousel.css" />
+    <Content Include="Module\StyleLibrary\Elements.xml" />
+    <Content Include="Module\StyleLibrary\images\01.jpg" />
+    <Content Include="Module\StyleLibrary\images\02.jpg" />
+    <Content Include="Module\StyleLibrary\images\03.jpg" />
+    <Content Include="Module\StyleLibrary\images\04.jpg" />
+    <Content Include="Module\StyleLibrary\images\05.jpg" />
+    <Content Include="Module\StyleLibrary\images\06.jpg" />
+    <Content Include="Module\StyleLibrary\images\07.jpg" />
+    <Content Include="Module\StyleLibrary\images\08.jpg" />
+    <Content Include="Module\StyleLibrary\images\09.jpg" />
+    <Content Include="Module\StyleLibrary\images\10.jpg" />
+    <Content Include="Module\StyleLibrary\images\11.jpg" />
+    <Content Include="Module\StyleLibrary\images\12.jpg" />
+    <Content Include="Module\StyleLibrary\images\13.jpg" />
+    <Content Include="Module\StyleLibrary\images\14.jpg" />
+    <Content Include="Module\StyleLibrary\images\15.jpg" />
+    <Content Include="Module\StyleLibrary\images\16.jpg" />
+    <Content Include="Module\StyleLibrary\images\bodybackground.png" />
+    <Content Include="Module\StyleLibrary\images\download.png" />
+    <Content Include="Module\StyleLibrary\images\next.png" />
+    <Content Include="Module\StyleLibrary\images\previous.png" />
+    <Content Include="Module\StyleLibrary\images\text.jpg" />
+    <Content Include="Module\StyleLibrary\js\imagegallery\init.js" />
+    <Content Include="Module\StyleLibrary\js\jquery-1.4.2.min.js" />
+    <Content Include="Module\StyleLibrary\js\jquery.liquidcarousel.min.js" />
+    <Content Include="WebPart\ImageGalleryWebPart\Elements.xml" />
+    <Content Include="WebPart\ImageGalleryWebPart\ImageGalleryWebPartUserControl.ascx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

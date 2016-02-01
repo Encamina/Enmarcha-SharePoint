@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="StyleLibrary\" Type="ElementManifest" />
+    <ProjectItemFile Source="js\jquery-1.4.2.min.js" Target="StyleLibrary\js\" Type="ElementFile" />
+    <ProjectItemFile Source="js\jquery.liquidcarousel.min.js" Target="StyleLibrary\js\" Type="ElementFile" />
+    <ProjectItemFile Source="images\01.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\02.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\03.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\04.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\05.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\06.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\07.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\08.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\09.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\10.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\11.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\12.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\13.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\14.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\15.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\16.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\bodybackground.png" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\download.png" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\next.png" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\previous.png" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="images\text.jpg" Target="StyleLibrary\images\" Type="ElementFile" />
+    <ProjectItemFile Source="css\liquidcarousel.css" Target="StyleLibrary\css\" Type="ElementFile" />
+    <ProjectItemFile Source="js\imagegallery\init.js" Target="StyleLibrary\js\imagegallery\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

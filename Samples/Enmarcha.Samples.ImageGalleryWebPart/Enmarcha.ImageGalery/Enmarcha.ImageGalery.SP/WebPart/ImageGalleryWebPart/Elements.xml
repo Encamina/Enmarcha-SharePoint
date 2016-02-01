@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/" >
+  <Module Name="ImageGalleryWebPart" List="113" Url="_catalogs/wp">
+    <File Path="ImageGalleryWebPart\ImageGalleryWebPart.webpart" Url="Enmarcha.ImageGalery.SP_ImageGalleryWebPart.webpart" Type="GhostableInLibrary" >
+      <Property Name="Group" Value="ENMARCHA" />
+    </File>
+  </Module>
+</Elements>

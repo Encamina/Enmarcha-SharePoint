@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="StyleLibrary" Path="StyleLibrary" RootWebOnly="TRUE" Url="Style Library">
+    <File Path="js\jquery-1.4.2.min.js" Url="js/jquery-1.4.2.min.js" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="js\jquery.liquidcarousel.min.js" Url="js/jquery.liquidcarousel.min.js" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\01.jpg" Url="images/01.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\02.jpg" Url="images/02.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\03.jpg" Url="images/03.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\04.jpg" Url="images/04.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\05.jpg" Url="images/05.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\06.jpg" Url="images/06.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\07.jpg" Url="images/07.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\08.jpg" Url="images/08.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\09.jpg" Url="images/09.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\10.jpg" Url="images/10.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\11.jpg" Url="images/11.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\12.jpg" Url="images/12.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\13.jpg" Url="images/13.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\14.jpg" Url="images/14.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\15.jpg" Url="images/15.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\16.jpg" Url="images/16.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\bodybackground.png" Url="images/bodybackground.png" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\download.png" Url="images/download.png" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\next.png" Url="images/next.png" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\previous.png" Url="images/previous.png" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="images\text.jpg" Url="images/text.jpg" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="css\liquidcarousel.css" Url="css/liquidcarousel.css" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+    <File Path="js\imagegallery\init.js" Url="js/imagegallery/init.js" Type="GhostableInLibrary" IgnoreIfAlreadyExists="TRUE" ReplaceContent="TRUE" Level="Published" />
+  </Module>
+</Elements>

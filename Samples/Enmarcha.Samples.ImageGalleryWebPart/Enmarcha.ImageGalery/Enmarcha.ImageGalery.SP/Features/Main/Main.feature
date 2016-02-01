@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<feature xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="903aa177-ce09-4d12-bdca-abad0bdd2aca" alwaysForceInstall="true" creator="ENCAMINA" description="Caracteristica que crea el tipo de contenido de ImageGalery, una lista y el WebPart" featureId="903aa177-ce09-4d12-bdca-abad0bdd2aca" imageUrl="https://encaminastorage.blob.core.windows.net/images/enmarcha-logo-128.png" imageAltText="enmarcha" receiverAssembly="$SharePoint.Project.AssemblyFullName$" receiverClass="$SharePoint.Type.3b363199-07a7-4a22-a468-6b0dfd24989a.FullName$" scope="Site" solutionId="00000000-0000-0000-0000-000000000000" title="Enmarcha ImageGalery CreateInfraestructure" version="AAEAAAD/////AQAAAAAAAAAEAQAAAA5TeXN0ZW0uVmVyc2lvbgQAAAAGX01ham9yBl9NaW5vcgZfQnVpbGQJX1JldmlzaW9uAAAAAAgICAgBAAAAAAAAAP//////////Cw==" uIVersion="15.0.0.0" deploymentPath="$SharePoint.Project.FileNameWithoutExtension$_$SharePoint.Feature.FileNameWithoutExtension$" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/FeatureModel">
+  <projectItems>
+    <projectItemReference itemId="751dcf38-ca46-42eb-83fd-5d222946d303" />
+    <projectItemReference itemId="49485d56-e250-41db-aff5-96bca6829661" />
+  </projectItems>
+</feature>

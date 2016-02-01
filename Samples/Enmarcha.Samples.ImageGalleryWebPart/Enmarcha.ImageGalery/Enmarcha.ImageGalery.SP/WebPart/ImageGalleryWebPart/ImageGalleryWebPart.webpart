@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="Enmarcha.ImageGalery.SP.WebPart.ImageGalleryWebPart.ImageGalleryWebPart, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">ImageGalleryWebPart</property>
+        <property name="Description" type="string">WebPart que muestra un carrusel de imagenes</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="dc9f8537-ef9d-4140-b453-11dee54b7e00" solutionId="dc9f8537-ef9d-4140-b453-11dee54b7e00" resetWebServer="false" sharePointProductVersion="15.0" name="Enmarcha.ImageGalery.SP" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="Enmarcha.ImageGalery.Model.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Enmarcha.ImageGalery.Model\Enmarcha.ImageGalery.Model.csproj" />
+    <projectOutputAssembly location="Enmarcha.ImageGalery.Service.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Enmarcha.ImageGalery.Service\Enmarcha.ImageGalery.Service.csproj" />
+    <customAssembly location="Enmarcha.SharePoint.Abstract.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Enmarcha.SharePoint.0.0.0.1\lib\net45\Enmarcha.SharePoint.Abstract.dll" />
+    <customAssembly location="Enmarcha.SharePoint.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\packages\Enmarcha.SharePoint.0.0.0.1\lib\net45\Enmarcha.SharePoint.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="749b4c60-c1b5-40d8-ad15-d3c8dfa117af" />
+  </features>
+</package>
