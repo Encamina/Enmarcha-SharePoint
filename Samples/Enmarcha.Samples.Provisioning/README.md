@@ -12,7 +12,7 @@ Visual Studio 2013 o superior
 ### Solución ###
 Solucin | Autor(s)
 ---------|----------
-Enmarcha.Samples.Provisioning | Adrian Diaz Cervera (**ENCAMINA**)
+Enmarcha.Samples.Provisioning | [Adrian Diaz Cervera](https://github.com/AdrianDiaz81) (**ENCAMINA**)
 
 ### Version history ###
 Version  | Fecha | Comentarios
@@ -22,11 +22,10 @@ Version  | Fecha | Comentarios
 ### Disclaimer ###
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-
 ----------
 
-# ESCENARIO:  #
-En este escenario vamos a mostrar como trabajar con una lista utilizando la clase [SharePointRepository](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Data/SharePointRepository.cs).
+## ESCENARIO ##
+En este escenario vamos a mostrar como trabajar con una lista utilizando la clase [SharePointRepository](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Data/SharePointRepository.cs)
 
 ### Visual Studio ###
 
@@ -60,7 +59,7 @@ public string Country { get; set; }
 [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.User, DisplayName = "Boss Primary")]
 public IList<UserSP> Boss { get; set; }
 ```
-Los Atributos que se pueden añadir a cada propiedad estan dentro de la Clase [EnmarchaAttribute.cs]https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Attribute/EnmarchaAttribute.cs)
+Los Atributos que se pueden añadir a cada propiedad estan dentro de la Clase [EnmarchaAttribute.cs](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Attribute/EnmarchaAttribute.cs)
 
 AddPrefeix-> Le añada un prefijo cuando crea el campo de forma que se evita que coincida con algun campo ya declarado
 

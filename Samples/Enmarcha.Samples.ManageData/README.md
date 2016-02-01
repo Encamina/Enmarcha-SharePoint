@@ -12,7 +12,7 @@ Visual Studio 2013 o superior
 ### Solucion ###
 Solucin | Autor(s)
 ---------|----------
-Enmarcha.Samples.ManageData | Adrian Diaz Cervera (**ENCAMINA**)
+Enmarcha.Samples.ManageData | [Adrian Diaz Cervera](https://github.com/AdrianDiaz81) (**ENCAMINA**)
 
 ### Version history ###
 Version  | Fecha | Comentarios
@@ -22,11 +22,10 @@ Version  | Fecha | Comentarios
 ### Disclaimer ###
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-
 ----------
 
-# ESCENARIO:  #
-En este escenario vamos a mostrar como trabajar con una lista utilizando la clase [SharePointRepository](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Data/SharePointRepository.cs).
+## ESCENARIO ##
+En este escenario vamos a mostrar como trabajar con una lista utilizando la clase [SharePointRepository](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Data/SharePointRepository.cs)
 
 ### Visual Studio ###
 

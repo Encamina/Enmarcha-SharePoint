@@ -12,7 +12,7 @@ Visual Studio 2013 o superior
 ### Solucion ###
 Solución | Autor(s)
 ---------|----------
-Enmarcha.Samples.PermissionList | Adrian Diaz Cervera (**ENCAMINA**)
+Enmarcha.Samples.PermissionList | [Adrian Diaz Cervera](https://github.com/AdrianDiaz81) (**ENCAMINA**)
 
 ### Version history ###
 Version  | Fecha | Comentarios
@@ -22,10 +22,9 @@ Version  | Fecha | Comentarios
 ### Disclaimer ###
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-
 ----------
 
-# ESCENARIO:  #
+## ESCENARIO ##
 En este escenario vamos a mostrar como Enmarcha [extiende la API de SharePoint Server](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Extensors/List.cs) para ahorrar funcionalidad.
 
 ### Visual Studio ###
