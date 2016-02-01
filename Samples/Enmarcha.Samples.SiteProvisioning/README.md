@@ -12,7 +12,7 @@ Visual Studio 2013 o superior
 ### Solucion ###
 Solución | Autor(s)
 ---------|----------
-Enmarcha.Samples.ManageData | Juan Carlos Martínez (**ENCAMINA**)
+Enmarcha.Samples.ManageData | [Juan Carlos Martínez](https://github.com/jcmartinez23) (**ENCAMINA**)
 
 ### Version history ###
 Version  | Fecha | Comentarios
@@ -22,10 +22,9 @@ Version  | Fecha | Comentarios
 ### Disclaimer ###
 **THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
 
-
 ----------
 
-# ESCENARIO:  #
+## ESCENARIO ##
 En este escenario vamos crear un sitio y un subsitio de SharePoint.
 
 ### Visual Studio ###
