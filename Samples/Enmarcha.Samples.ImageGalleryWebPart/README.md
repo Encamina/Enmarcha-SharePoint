@@ -25,92 +25,74 @@ Version  | Fecha | Comentarios
 ----------
 
 ## ESCENARIO ##
-En este escenario vamos a crear un WebPart Visual. , en primer lugar a  a mostrar como trabajar con una lista utilizando la clase [SharePointRepository](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Data/SharePointRepository.cs)
+En este escenario vamos a crear un WebPart Visual. En primer lugar nos crearemos una Feature en la que aprovisonaremos los artefactos que nos hace falta para el correcto funcionaiento del WebPart. En segundo lugar, utilizaremos una arquitectura de N-Capas para separar la lógica de la aplicación de la interfaz de usuario. Y para finalizar, realizaremos test unitarios utilizando la herramienta [JustMock de Telerik](http://www.telerik.com/products/mocking.aspx). (para poder ejecutarlo es necesario tener licencia sobre este sofware) 
 
 ### Visual Studio ###
 
-1.- Abrimos la solución Enmarcha.Samples.sln con Visual Studio 2013/ Visual Studio 2015
+1.- Abrimos la solución Enmarcha.ImageGalery.sln con Visual Studio 2013/ Visual Studio 2015
 
 2.- Restauramos los paquetes Nuget de la Solución
 
-3.- Abrimos el fichero Program.cs e introducimos la url de nuestro sitio de SharePoint que esta asignada en la constante urlSharePointOnpremise:
-```C#
- const string urlSharePointOnpremise = "urlsiteSharePoint";
-```
-4.- Para crear la lista utilizaremos el método extensor [CreateList](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Extensors/List.cs)
-```C#
-  var createList= web.CreateList(listName, "List of Employed of my Company", TypeList.GenericList, false,
-                        typeof (Employed));
-```
-Esto crea una lista y le añade los campos, cada una de las propiedades que hay en la clase [Employed.cs](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Samples/Enmarcha.Samples.ManageData/Model/Employed.cs). 
-Para saber que tipo de Columnas de SharePoint son necesarios a cada propiedad le asignamos unos Atributos donde se condigura estos valores:
-```C#
- [Enmarcha(AddPrefeix = false, Create = false, Type = TypeField.Text)]
-        public string ID { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Text, DisplayName = "Fist Name")]
-        public string Name { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Text, DisplayName = "Last Name")]
-        public string LastName { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.DateTime, DisplayName = "Date of Born")]
-        public DateTime DateBorn { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Choice, DisplayName = "Job",Choice= new []{"Developer","Designer"})]
-        public string Job { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.Text, DisplayName = "Country")]
-        public string Country { get; set; }
-        [Enmarcha(AddPrefeix = false, Create = true, Type = TypeField.User, DisplayName = "Boss Primary")]
-        public IList<UserSP> Boss { get; set; }
-```
-Los Atributos que se pueden añadir a cada propiedad estan dentro de la Clase [EnmarchaAttribute.cs]https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Attribute/EnmarchaAttribute.cs)
-AddPrefeix-> Le añada un prefijo cuando crea el campo de forma que se evita que coincida con algun campo ya declarado
-Create -> Indica si esta propiedad hay que crearla o no.
-Type -> Tipo de SharePoint con el que representa esta propiedad
-
-5.-A continuación, inicialicaremos la clase SharePointRepository, los parametros que son necesarios son:
-
-. SPweb
-
-. Log (Enmarcha por defecto trae un Log que graba en los [logs de SharePoint](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Logs/LogManager.cs) pero se puede utilizar cualquier Log siemple que se implemente la interfaz [ILog](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint.Abstract/Interfaces/Artefacts/ILog.cs)
+### Feature Main ###
+1.- Abrimos el Event Receiver asociado a la Feature Main (Main.eventReceiver.cs). Dentro de este código esta la creación de las Columnas de sitio, tipos de contenido y lista de ImageGalery.
 
 ```C#
-var  logger = new LogManager().GetLogger(new System.Diagnostics.StackTrace().GetFrame(0)); ;
-var repository= new SharePointRepository<Employed>(web,logger,listName,10);
+var site = properties.Feature.Parent as SPSite;
+var web = site.RootWeb;
+ILog log = new LogManager().GetLogger(new StackTrace().GetFrame(0)); ;
+var columnSiteCollection = web.CreateColumnSite("Image Galery", typeof(ImageGallery));
+web.CreateContentType(Constants.ContentType.ImageGallery, "Enmarcha ContentType", "Elemento", columnSiteCollection);
+web.CreateList(Constants.List.ImageGallery, "Lista de la galeria de imagenes", TypeList.GenericList, true);
+var list = web.Lists.TryGetList(Constants.List.ImageGallery);
+if (list != null)
+{
+ list.AddContentTypeLibrary("Image Galery");
+}
 ```
+2.- En la propia feature, se despliega los ficheros javascript y css que utiliza el WebPArt, para ello en la carpeta Module hay un modulo Style Library donde se despliegua estos elementos. 
 
-6.- Ahora para insertar un elemento sobre la lista de SharePoint Employed, tendremos en primer lugar crear una elemento basado en la clase Employed y a continuación pasarle ese elemento al metodo "Insert" de nuestro repositorio de SharePoint. de 
+3.- En el CodeBehind del WebPart vamos a realizar la llamada a nuestro servicio de [ImageGalery](https://github.com/Encamina/Enmarcha-SharePoint/tree/master/Samples/Enmarcha.Samples.ImageGalleryWebPart/Enmarcha.ImageGalery.Service)
 ```C#
-  var employed = new Employed
-                {
-                    Country = "Spain",
-                    DateBorn = new DateTime(1981, 5, 10),
-                    Job = "Sofware Architect",
-                    LastName = "Diaz Cervera",
-                    Name = "Adrian"
-                };
-var  resultInsert= repository.Insert(employed);
+ private void LoadData()
+ {
+ try
+  {
+  var listSharePoint = SPContext.Current.Web.Lists.TryGetList(Constants.List.ImageGallery);
+  var imageGaleryService = new ImageGaleryService(listSharePoint, 5);
+  var imageGaleryCollection = imageGaleryService.GetNews();
+  listViewImageGalery.DataSource = imageGaleryCollection;
+  listViewImageGalery.DataBind();
+ }
+ catch (Exception exception)
+   {
+     Logger.Error(string.Concat("Error Concat LoadData",exception.Message));
+   }
+ }
 ```
-7.- Para realizar una modificación sobre un elemento hay que pasarle los datos que se quierean modificar y el identificador del elemento que vamos actualizar
+### Test ###
+1.- La Api de SharePoint esta cerrada por lo que para realizar test unitarios es necesario bien hacer un Mock sobre SharePoint o bien utilizar una herramienta de terceros en nuestros caso hemos utilzado JustMock de Telerik
 ```C#
-  var firstEmployed= new Employed { Job = "Sofware Architect Lead"};
-  var updateOperation= repository.Save(Convert.ToInt32(resultInsert), firstEmployed);
-```
+ [TestMethod]
+ public void GetNews()
+ {
+  var fakeSiteUrl = "http://www.telerik.com";
+  var fakeSharepointSite = Mock.Create<SPSite>();
+  var fakeSharePointList = Mock.Create<SPList>();
+ 
+  Mock.Arrange(() => SPContext.Current.Site).Returns(fakeSharepointSite);
+  Mock.Arrange(() => fakeSharepointSite.RootWeb.Lists.TryGetList("demo")).Returns(fakeSharePointList);
 
-8.- Eliminar un elemento
-```C#
-var resultBool = repository.Delete(resultInsert);
-```
-
-9.- Como hacer Hacer consultas sobre las listas, se pueden hacer de dos formas pasando la Caml Query de forma directa:
-```C#
- var queryCaml = @"<Where>
-                                      <Eq>
-                                         <FieldRef Name='Name' />
-                                         <Value Type='Text'>Adrian</Value>
-                                      </Eq>
-                                   </Where>";
- var queryCollection = repository.Query(queryCaml, 1);
-```
-o bien podemos utilizar un [generador de consultas](https://github.com/Encamina/Enmarcha-SharePoint/blob/master/Enmarcha.SharePoint/Entities/Data/Query.cs) que esta dentro de Enmarcha
-```C#
-var query = new Query().Where().Field("Name",string.Empty).Operator(TypeOperators.Eq).Value("Text","Adrian");
-  queryCollection = repository.Query(query, 1);
+  var service = new ImageGaleryService(fakeSharePointList, 10);            
+  Mock.Arrange(() => service.GetNews()).Returns(new List<ImageGallery>
+  { new ImageGallery
+  {
+    Title = "Imagen",
+    Description = "Image",
+    UrlNew = new UrlField {Description = string.Empty,Url = "http://google.es"},
+    Image = new UrlField {Description = string.Empty,Url = "http://google.es"},
+    Visible = true,
+    ID = "1",
+     OpenWindows = true
+            } });
+        }
 ```
