@@ -4,7 +4,7 @@
 
 ENMARCHA es el framework de desarrollo que usamos en ENCAMINA para acelerar la construcción de soluciones Microsoft. 
 
-![alt text](https://encaminastorage.blob.core.windows.net/images/enmarcha-logo-128.png "Logo Enmarcha")
+![alt text](https://encaminastorage.blob.core.windows.net/images/enmarcha-270.png "Logo Enmarcha")
 
 El repositorio ['ENMARCHA SharePoint'](https://github.com/encamina/enmarcha-sharepoint) es donde desarrollamos la implementación de SharePoint OnPremises, ofreciendo una capa de abstracción a la API de servidor que ofrece Microsoft SharePoint. 
 

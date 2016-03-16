@@ -191,7 +191,8 @@ namespace Enmarcha.SharePoint.Extensors
                     Choice = choice,
                     Group = group,
                     MultiValue = multiValue,
-                    AddPrefix = addPrefix
+                    AddPrefix = addPrefix,
+                    DisplayName = displayName
                 });
             }
         }
@@ -209,7 +210,8 @@ namespace Enmarcha.SharePoint.Extensors
                         Requiered = args.Requiered,
                         Group = args.Group,
                         DefaultValue = args.DefaultValue,
-                        AddPrefix = args.AddPrefix
+                        AddPrefix = args.AddPrefix,
+                        DisplayName = args.DisplayName
                     });
                 args.List.AddField(columnSite);
 
@@ -228,7 +230,8 @@ namespace Enmarcha.SharePoint.Extensors
                             FieldType = type,
                             Choices = args.Choice,
                             Group = args.Group,
-                            AddPrefix = args.AddPrefix
+                            AddPrefix = args.AddPrefix,
+                            DisplayName = args.DisplayName
                         },
                            args.DefaultValue, args.Requiered);
                         break;
@@ -242,7 +245,8 @@ namespace Enmarcha.SharePoint.Extensors
                             Group = args.Group,
                             DefaultValue = args.DefaultValue,
                             MultiValue = args.MultiValue,
-                            AddPrefix = args.AddPrefix
+                            AddPrefix = args.AddPrefix,
+                            DisplayName = args.DisplayName
                         });
                         break;
                 }
@@ -280,6 +284,7 @@ namespace Enmarcha.SharePoint.Extensors
                 {Constants.FieldTypeColumns.Currency,SPFieldType.Currency},
                 {Constants.FieldTypeColumns.Url,SPFieldType.URL},
                 {Constants.FieldTypeColumns.Calculated,SPFieldType.Calculated},
+                {Constants.FieldTypeColumns.User,SPFieldType.User}
             };
 
         }
