@@ -7,6 +7,7 @@ namespace Enmarcha.SharePoint.Helpers.Extensors
     {
         public ListSharePoint List { get; set; }
         public string Name { get; set; }
+        public string DisplayName { get; set; }
         public string FieldType { get; set; }
         public bool Requiered { get; set; }
         public string DefaultValue { get; set; }

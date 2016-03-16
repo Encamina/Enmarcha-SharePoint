@@ -237,7 +237,10 @@ namespace Enmarcha.SharePoint.Entities.Artefacts
                         AddFieldCurrency(column);
                         break;
                     default:
-                        listEdit.Fields.Add(column.Name, column.Type, column.Required);
+                        var item= listEdit.Fields.Add(column.Name, column.Type, column.Required);
+                        var fieldDefault = listEdit.Fields.GetField(item);
+                        fieldDefault.Title = column.DisplayName;
+                        fieldDefault.Update(true);
                         break;
                 }
             }
@@ -466,7 +469,7 @@ namespace Enmarcha.SharePoint.Entities.Artefacts
             listEdit.Fields.Add(column.Name, column.Type, column.Required);
             var calculate = (SPFieldCalculated)listEdit.Fields.GetField(column.Name);
             calculate.Formula = column.Formula;
-
+            calculate.Title = column.DisplayName;
             calculate.Required = column.Required;
 
             calculate.Update();
@@ -503,6 +506,7 @@ namespace Enmarcha.SharePoint.Entities.Artefacts
             date.DisplayFormat = column.Date == TypeDate.Date
                 ? SPDateTimeFieldFormatType.DateOnly
                 : SPDateTimeFieldFormatType.DateTime;
+            date.Title = column.DisplayName;
             date.Update();
         }
 
@@ -519,6 +523,7 @@ namespace Enmarcha.SharePoint.Entities.Artefacts
                 return;
             }
             var choice = (SPFieldChoice)listEdit.Fields.GetField(column.Name);
+            choice.Title = column.DisplayName;
             choice.DefaultValue = column.DefaultValue;
             choice.Update();
         }
@@ -536,6 +541,7 @@ namespace Enmarcha.SharePoint.Entities.Artefacts
             }
             var boolean = (SPFieldBoolean)listEdit.Fields.GetField(column.Name);
             boolean.DefaultValue = column.DefaultValue;
+            boolean.Title = column.DisplayName;
             boolean.Update();
         }
 
@@ -546,7 +552,7 @@ namespace Enmarcha.SharePoint.Entities.Artefacts
                 return;
             }
             var field = (SPFieldCurrency)Web.Fields.GetFieldByInternalName(Name);
-
+            field.Title = column.DisplayName;
             field.Group = column.GroupName;
             field.Required = column.Required;
             field.CurrencyLocaleId = column.Currency;
