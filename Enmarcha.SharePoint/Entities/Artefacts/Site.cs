@@ -28,7 +28,7 @@ namespace Enmarcha.SharePoint.Entities.Artefacts
         {
             try
             {                
-                var oGroup = Web.Site.RootWeb.Groups.GetByName(group);
+                var oGroup = Web.Site.RootWeb.SiteGroups.GetByName(group);
                 var roleAssignment = new SPRoleAssignment(oGroup);
                 var roleDefinition = Web.RoleDefinitions.GetByType((SPRoleType) role);
                 roleAssignment.RoleDefinitionBindings.Add(roleDefinition);
@@ -101,7 +101,7 @@ namespace Enmarcha.SharePoint.Entities.Artefacts
         {
             try
             {                
-                var oGroup = Web.Site.RootWeb.Groups.GetByName(group);
+                var oGroup = Web.Site.RootWeb.SiteGroups.GetByName(group);
                 Web.RoleAssignments.RemoveById(oGroup.ID);
                 Web.Update();             
                 return true;
