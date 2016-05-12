@@ -3,6 +3,7 @@ using Enmarcha.SharePoint.Abstract.Enum;
 using Enmarcha.SharePoint.Abstract.Interfaces.Artefacts;
 using Enmarcha.SharePoint.Class.Logs;
 using Microsoft.SharePoint;
+using Microsoft.SharePoint.Applications.GroupBoard.MobileControls;
 
 namespace Enmarcha.SharePoint.Extensors
 {
@@ -130,6 +131,43 @@ namespace Enmarcha.SharePoint.Extensors
             catch (Exception exception)
             {
                 Logger.Error(string.Concat("Error Create Site: ", exception.Message));
+                return false;
+            }
+        }
+        /// <summary>
+        /// Get the PropertyBag of SPWeb 
+        /// </summary>
+        /// <param name="web"></param>
+        /// <param name="propertyName">Name of Property</param>
+        public static string GetPropertyBag(this SPWeb web, string propertyName)
+        {
+            return web.AllProperties.ContainsKey(propertyName) ? web.AllProperties[propertyName].ToString() : string.Empty;
+        }
+
+        /// <summary>
+        /// Set the PropertyBag of SPWeb 
+        /// </summary>
+        /// <param name="web"></param>
+        /// <param name="propertyName">Name of Property</param>
+        /// <param name="propertyValue">Value of Proerty</param>
+        public static bool SetPropertyBag(this SPWeb web, string propertyName,string propertyValue)
+        {
+            try
+            {
+                if (!web.AllProperties.ContainsKey(propertyName))
+                {
+                    web.Properties.Add(propertyName, propertyValue);
+                }
+                else
+                {
+                    web.AllProperties[propertyName] = propertyValue;
+                }
+                web.Properties.Update();
+                return true;
+            }
+            catch (Exception exception)
+            {
+                Logger.Error(string.Concat("Error SetPropertyBag: ",exception.Message) );
                 return false;
             }
         }
