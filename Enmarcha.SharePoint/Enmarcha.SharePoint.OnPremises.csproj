@@ -9,7 +9,6 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Enmarcha.SharePoint</RootNamespace>
     <AssemblyName>Enmarcha.SharePoint</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -75,6 +74,9 @@
   </PropertyGroup>
   <Choose>
     <When Condition=" '$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Release' ">
+      <PropertyGroup>
+        <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+      </PropertyGroup>
       <ItemGroup>
         <Reference Include="Microsoft.SharePoint, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
           <SpecificVersion>False</SpecificVersion>
@@ -91,32 +93,38 @@
       </ItemGroup>
     </When>
     <When Condition=" '$(Configuration)' == 'Debug16' Or '$(Configuration)' == 'Release16' ">
+      <PropertyGroup>
+        <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+      </PropertyGroup>
       <ItemGroup>
-        <Reference Include="Microsoft.SharePoint, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+        <Reference Include="Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
           <SpecificVersion>False</SpecificVersion>
           <HintPath>..\Assemblies\16.0\Microsoft.SharePoint.dll</HintPath>
         </Reference>
-        <Reference Include="Microsoft.SharePoint.Publishing, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+        <Reference Include="Microsoft.SharePoint.Publishing, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
           <SpecificVersion>False</SpecificVersion>
           <HintPath>..\Assemblies\16.0\Microsoft.SharePoint.Publishing.dll</HintPath>
         </Reference>
-        <Reference Include="Microsoft.SharePoint.Taxonomy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+        <Reference Include="Microsoft.SharePoint.Taxonomy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
           <SpecificVersion>False</SpecificVersion>
           <HintPath>..\Assemblies\16.0\Microsoft.SharePoint.Taxonomy.dll</HintPath>
         </Reference>
       </ItemGroup>
     </When>
     <Otherwise>
+      <PropertyGroup>
+        <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+      </PropertyGroup>
       <ItemGroup>
-        <Reference Include="Microsoft.SharePoint, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+        <Reference Include="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
           <SpecificVersion>False</SpecificVersion>
           <HintPath>..\Assemblies\15\Microsoft.SharePoint.dll</HintPath>
         </Reference>
-        <Reference Include="Microsoft.SharePoint.Publishing, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+        <Reference Include="Microsoft.SharePoint.Publishing, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
           <SpecificVersion>False</SpecificVersion>
           <HintPath>..\Assemblies\15\Microsoft.SharePoint.Publishing.dll</HintPath>
         </Reference>
-        <Reference Include="Microsoft.SharePoint.Taxonomy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+        <Reference Include="Microsoft.SharePoint.Taxonomy, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
           <SpecificVersion>False</SpecificVersion>
           <HintPath>..\Assemblies\15\Microsoft.SharePoint.Taxonomy.dll</HintPath>
         </Reference>
