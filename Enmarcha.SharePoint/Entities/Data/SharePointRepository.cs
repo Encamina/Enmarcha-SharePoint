@@ -221,19 +221,19 @@ namespace Enmarcha.SharePoint.Class.Data
             }
         }
 
-        private void SetDefault(SPListItem listItem, PropertyInfo prop, T valor, string nameInternal, string type, bool multiple)
+                private void SetDefault(SPListItem listItem, PropertyInfo prop, T valor, string nameInternal, string type, bool multiple)
         {
             try
             {
                 var field = listItem.Fields.GetFieldByInternalName(nameInternal);
-                var fieldValueType = field.FieldValueType.Name;
+                var fieldValueType = field.FieldValueType !=null ? field.FieldValueType.Name : field.TypeAsString;
                 if (fieldValueType.Contains("Boolean"))
                 {
                     SetFieldBoolean(listItem, prop, valor, nameInternal);
                     return;
                 }
 
-                if (fieldValueType.Contains("Double"))
+                if (fieldValueType.Contains("Double") || fieldValueType.Contains("Counter"))
                 {
                     SetFieldDouble(listItem, prop, valor, type, nameInternal);
                     return;
@@ -246,22 +246,29 @@ namespace Enmarcha.SharePoint.Class.Data
                 if (fieldValueType.Contains("Url"))
                 {
                     SetFieldUrl(listItem, prop, valor, nameInternal);
+                    return;
                 }
                 if (fieldValueType.Contains("User"))
                 {
                     SetFieldTypeUSer(listItem, prop, valor, nameInternal, multiple);
-                }
-                else
-                {
-                    SetFieldTypeDefault(listItem, prop, valor, nameInternal);
+                    return;
                 }
 
+                SetFieldTypeDefault(listItem, prop, valor, nameInternal);
             }
             catch (Exception exception)
             {
-                Logger.Warn("Aviso" + exception.Message);
-                prop.SetValue(valor,
-                    (listItem[nameInternal] != null ? listItem[nameInternal].ToString() : ""));
+                Logger.Warn("Aviso " + exception.Message);
+                try
+                {
+                    prop.SetValue(valor,
+                   (listItem[nameInternal] != null ? listItem[nameInternal].ToString() : ""));
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(ex.Message);
+                }
+               
             }
         }
 
